@@ -1,38 +1,72 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.result {
+  font-size: 32px; /* フォントサイズを大きく */
+  color: #2c3e50; /* 色をダークブルーに */
+  margin-top: 20px; /* 上のマージンを追加 */
+}
+
+.reset-button {
+  margin-top: 20px; /* 上のマージンを追加 */
+  padding: 10px 15px; /* パディングを追加 */
+  background-color: #3498db; /* 背景色をブルーに */
+  color: white; /* テキストカラーを白に */
+  border: none; /* ボーダーを削除 */
+  cursor: pointer; /* カーソルをポインターに */
+  border-radius: 5px; /* 角を丸く */
+  font-size: 16px; /* フォントサイズを変更 */
+  transition: background-color 0.3s; /* 背景色の変更を滑らかに */
+}
+
+.reset-button:hover {
+  background-color: #2980b9; /* ホバー時の背景色を変更 */
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px); /* セルのサイズを統一 */
+  gap: 5px;
+  margin: 0 auto;
+  border: 3px solid #333;
+  padding: 5px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  background-color: white;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  font-size: 36px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background-color: #fff;
+  transition: 0.3s all;
+  border: 1px solid #333;
+
+  /* セルの文字色を指定する */
+  color: #333;
 }
 
-.App-link {
-  color: #61dafb;
+/* 〇を表現するためのスタイル */
+.cell[data-value="O"] {
+  color: #3498db; /* 〇の色を青に */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ×を表現するためのスタイル */
+.cell[data-value="X"] {
+  color: #e74c3c; /* ×の色を赤に */
+}
+
+.cell:hover {
+  background-color: #ddd;
 }

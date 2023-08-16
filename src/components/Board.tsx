@@ -14,6 +14,7 @@ const Board: React.FC<Props> = ({ board, onClickCell }) => {
             <button
               key={colIndex}
               className="cell"
+              data-value={cellValue}
               onClick={() => onClickCell(rowIndex, colIndex)}
             >
               {cellValue}

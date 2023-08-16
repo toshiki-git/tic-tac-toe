@@ -5,23 +5,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/* ボタンにフォーカスされた時のスタイルを削除 */
+button:focus {
+  outline: none;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-.board {
-  display: grid;
-  grid-template-columns: repeat(3, 60px);
-  gap: 5px;
-}
-
-.cell {
-  width: 60px;
-  height: 60px;
-  font-size: 24px;
-  cursor: pointer;
-  border: 1px solid black;
 }

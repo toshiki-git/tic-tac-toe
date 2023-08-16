@@ -104,7 +104,16 @@ function App() {
   return (
     <div className="App">
       <Board board={board} onClickCell={handleCellClick} />
-      {winner && <div>Winner: {winner}</div>}
+      {winner ? (
+        <>
+          <div className="result">
+            {winner === "Draw" ? "Draw" : `Winner: ${winner}`}
+          </div>
+          <button onClick={resetGame} className="reset-button">
+            Game Reset
+          </button>
+        </>
+      ) : null}
     </div>
   );
 }
